@@ -1,0 +1,120 @@
+{
+  "id": "poster-pro",
+  "name": "Poster Pro",
+  "version": "1.0.0",
+  "apiVersion": 9,
+  "entry": "plugin.js",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Rellena el póster (y el fondo) que le falte a un título de cualquiera de tus fuentes, con la nota incrustada. No agrega catálogo, no reproduce nada y no pide cuenta: solo entra cuando falta una imagen.",
+  "author": "Kino",
+  "homepage": "https://github.com/kinotvapp/kino-plugin-poster-pro",
+  "hosts": [
+    "openposterdb.com",
+    "api.ratingposterdb.com"
+  ],
+  "capabilities": [
+    "meta"
+  ],
+  "catalogOnly": true,
+  "color": "#F5C518",
+  "icon": "icon.png",
+  "settings": [
+    {
+      "key": "servidor",
+      "label": "Servidor de imágenes",
+      "labelEn": "Image server",
+      "type": "section"
+    },
+    {
+      "key": "service",
+      "label": "Servidor preferido",
+      "labelEn": "Preferred server",
+      "type": "select",
+      "default": "openposterdb",
+      "hint": "Si el preferido no tiene la imagen, se prueba el otro",
+      "hintEn": "If the preferred one has no image, the other is tried",
+      "options": [
+        {
+          "value": "openposterdb",
+          "label": "OpenPosterDB (gratis)",
+          "labelEn": "OpenPosterDB (free)"
+        },
+        {
+          "value": "rpdb",
+          "label": "RatingPosterDB",
+          "labelEn": "RatingPosterDB"
+        }
+      ]
+    },
+    {
+      "key": "key",
+      "label": "Clave del servidor",
+      "labelEn": "Server key",
+      "type": "text",
+      "default": "t0-free-rpdb",
+      "hint": "La clave pública gratuita ya viene puesta y sirve en los dos servidores",
+      "hintEn": "The free public key is already set and works on both servers"
+    },
+    {
+      "key": "imagenes",
+      "label": "Qué se rellena",
+      "labelEn": "What gets filled in",
+      "type": "section"
+    },
+    {
+      "key": "ratings",
+      "label": "Notas en el póster",
+      "labelEn": "Ratings on the poster",
+      "type": "select",
+      "default": "auto",
+      "hint": "Solo con OpenPosterDB; RatingPosterDB elige las suyas",
+      "hintEn": "OpenPosterDB only; RatingPosterDB picks its own",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Las que tenga el servidor",
+          "labelEn": "Whatever the server has"
+        },
+        {
+          "value": "imdb",
+          "label": "Solo IMDb",
+          "labelEn": "IMDb only"
+        },
+        {
+          "value": "imdbRt",
+          "label": "IMDb y Rotten Tomatoes",
+          "labelEn": "IMDb and Rotten Tomatoes"
+        }
+      ]
+    },
+    {
+      "key": "backdrop",
+      "label": "Rellenar también el fondo",
+      "labelEn": "Fill in the backdrop too",
+      "type": "toggle",
+      "default": true,
+      "hint": "Solo cuando el título no trae fondo",
+      "hintEn": "Only when the title has no backdrop"
+    },
+    {
+      "key": "diag",
+      "label": "Diagnóstico",
+      "labelEn": "Diagnostics",
+      "type": "section"
+    },
+    {
+      "key": "serverStatus",
+      "label": "Qué funciona",
+      "labelEn": "What works",
+      "type": "status"
+    },
+    {
+      "key": "testServer",
+      "label": "Probar los servidores",
+      "labelEn": "Test the servers",
+      "type": "action"
+    }
+  ]
+}
